@@ -13,45 +13,30 @@
         </div>
         <div class="keyboard">
             <div class="keyboard-line">
-                <div class="keyboard-btn btn--yellow">rad</div>
-                <div class="keyboard-btn btn--yellow">deg</div>
-                <div class="keyboard-btn btn--yellow" onclick="insert('ph')"> &lt0 </div>
-                <div class="keyboard-btn btn--yellow" onclick="insert('abs(')">abs</div>
+                <div class="keyboard-btn btn--yellow" onclick="insert('inv(')">Inv</div>
                 <div class="keyboard-btn btn--yellow" onclick="insert('(')">(</div>
                 <div class="keyboard-btn btn--yellow" onclick="insert(')')">)</div>
-                <div class="keyboard-btn btn--purple" onclick="clean('')">AC</div>
+                <div class="keyboard-btn btn--purple" onclick="clean('')">CE</div>
             </div>
             <div class="keyboard-line">
-                <div class="keyboard-btn btn--yellow" onclick="insert('i')">i</div>
-                <div class="keyboard-btn btn--yellow" onclick="insert('sin(')">sin</div>
-                <div class="keyboard-btn btn--yellow" onclick="insert('ln(')">ln</div>
                 <div class="keyboard-btn btn--Gray"   onclick="insert('7')">7</div>
                 <div class="keyboard-btn btn--Gray"   onclick="insert('8')">8</div>
                 <div class="keyboard-btn btn--Gray"   onclick="insert('9')">9</div>
                 <div class="keyboard-btn btn--purple" onclick="insert('/')">&divide</div>
             </div>
             <div class="keyboard-line">
-                <div class="keyboard-btn btn--yellow" onclick="insert('&#960')">&#960</div>
-                <div class="keyboard-btn btn--yellow" onclick="insert('cos(')">cos</div>
-                <div class="keyboard-btn btn--yellow" onclick="insert('log(')">log</div>
                 <div class="keyboard-btn btn--Gray"   onclick="insert('4')">4</div>
                 <div class="keyboard-btn btn--Gray"   onclick="insert('5')">5</div>
                 <div class="keyboard-btn btn--Gray"   onclick="insert('6')">6</div>
                 <div class="keyboard-btn btn--purple" onclick="insert('*')">&times</div>
             </div>
             <div class="keyboard-line">
-                <div class="keyboard-btn btn--yellow" onclick="insert('e')">e</div>
-                <div class="keyboard-btn btn--yellow" onclick="insert('tan(')">tan</div>
-                <div class="keyboard-btn btn--yellow" onclick="insert('&#8730(')">&#8730</div>
                 <div class="keyboard-btn btn--Gray"   onclick="insert('1')">1</div>
                 <div class="keyboard-btn btn--Gray"   onclick="insert('2')">2</div>
                 <div class="keyboard-btn btn--Gray"   onclick="insert('3')">3</div>
                 <div class="keyboard-btn btn--purple" onclick="insert('-')">-</div>
             </div>
             <div class="keyboard-line">
-                <div class="keyboard-btn btn--yellow">Ans</div>
-                <div class="keyboard-btn btn--yellow" onclick="insert('')">alg</div>
-                <div class="keyboard-btn btn--yellow" onclick="insert('')">x&#8319</div>
                 <div class="keyboard-btn btn--Gray"   onclick="insert('0')">0</div>
                 <div class="keyboard-btn btn--Gray"   onclick="insert('.')">.</div>
                 <div class="keyboard-btn btn--purple" onclick="calculate()">=</div>
@@ -61,21 +46,16 @@
     </div>
     <script>
         function insert(num){
-            console.log(num);
             const screenValue = document.getElementById('screen').innerHTML;
             document.getElementById('screen').innerHTML = screenValue + num;
         }
         function clean(){
-            console.log("apertei limpar");
             const screenValue = document.getElementById('screen').innerHTML;
             document.getElementById('screen').innerHTML = screenValue.substring(0, screenValue.length - 1);
         }
         function calculate(){
-            console.log("apertei calcular");
             const screenValue = document.getElementById('screen').innerHTML;
             document.getElementById('screen').innerHTML = eval(screenValue);
-            console.log(screenValue )
-            
         }
     </script>
 </body>
